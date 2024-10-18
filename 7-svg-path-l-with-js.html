@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            margin:0;
+        }
+        svg{
+            width: 100%;
+            box-shadow:0px 0px 20px 0px #0004;
+            max-width: 300px;
+            margin:10px;
+            display: inline-block;
+        }
+
+        #p1{
+            transition: all .3s;
+        }
+        
+    </style>
+
+    <svg viewBox="0 0 100 100" id="start-starter">
+        <circle cx="50" cy="50" r="40" fill="#0f08" stroke="black" stroke-width="0"/>
+        
+        <circle cx="50" cy="10" r="10" fill="red" stroke="black" stroke-width="0"/>
+        <circle cx="25" cy="80" r="10" fill="blue" stroke="black" stroke-width="0"/>
+        <circle cx="90" cy="40" r="10" fill="purple" stroke="black" stroke-width="0"/>
+        <circle cx="10" cy="40" r="10" fill="yellow" stroke="black" stroke-width="0"/>
+        <circle cx="75" cy="80" r="10" fill="green" stroke="black" stroke-width="0"/>
+
+        <path id="p1" d="
+        M50,10 
+        L25,80 
+        L90,40 
+        L10,40 
+        L75,80
+        Z
+        " fill="#00f0" stroke="black" stroke-width="1"/>
+
+    </svg>
+
+    <button onclick="changeStar()">Draw!</button>
+
+    <script>
+    function changeStar(){
+        const el = document.querySelector('#p1');
+        let point_1 = [50+getRand(-10,10),10+getRand(-10,10)];
+        let point_2 = [25+getRand(-10,10),80+getRand(-10,10)];
+        let point_3 = [90+getRand(-10,10),40+getRand(-10,10)];
+        let point_4 = [10+getRand(-10,10),40+getRand(-10,10)];
+        let point_5 = [75+getRand(-10,10),80+getRand(-10,10)];
+        let newDraw = `
+        M${point_1[0]},${point_1[1]} 
+        L${point_2[0]},${point_2[1]} 
+        L${point_3[0]},${point_3[1]} 
+        L${point_4[0]},${point_4[1]} 
+        L${point_5[0]},${point_5[1]} 
+        Z
+        `
+        el.setAttribute('d', newDraw);
+    }
+
+    // setInterval(()=>{changeStar()}, 100);
+
+    const getRand = (min, max) => {
+        return Math.random() * (max - min) + min
+    }
+
+    </script>
+</body>
+</html>

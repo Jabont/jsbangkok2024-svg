@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            margin:0;
+        }
+        svg{
+            width: 100%;
+            box-shadow:0px 0px 20px 0px #0004;
+            max-width: 800px;
+            margin:auto;
+            display: block;
+        }
+        #r1,#c1{
+            transition: all .3s;
+        }
+        #r1{
+            transform: scale(1) rotate(0deg);
+            transform-origin:center;
+        }
+        #c1{
+            transform: scale(1);
+            transform-origin:center;
+        }
+        #mySvg[data-play="-1"] {
+            #r1{
+            transform: scale(0) rotate(-450deg);
+            }
+            #c1{
+            transform: scale(3);
+            fill:yellow;
+            }
+        }
+    </style>
+
+    <svg viewBox="0 0 200 100" id="mySvg" data-play="-1">
+        <line id="l1" x1="0" y1="0" x2="200" y2="100" stroke="black" stroke-width="1"/>
+        <circle id="c1" cx="100" cy="50" r="40" fill="#f008" stroke="black" stroke-width="1"/>
+        <svg viewBox="0 0 280 100" x="0" y="0" width="280" height="100">
+            <rect id="r1" x="100" y="10" width="80" height="80" fill="#00f8"/>
+        </svg>
+    </svg>
+    <button onclick="mySvg.dataset.play *= -1">Toggle</button>
+</body>
+</html>

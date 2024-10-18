@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            margin:0;
+        }
+        svg{
+            width: 100%;
+            box-shadow:0px 0px 20px 0px #0004;
+            max-width: 800px;
+            margin:auto;
+            display: block;
+        }
+        #c1{
+            transition: all .3s;
+            transform: scale(1);
+            transform-origin: center;
+            
+        }
+        #c1:hover{
+            transform: scale(2);
+            fill:red;
+        }
+    </style>
+
+    <svg viewBox="0 0 200 100" id="mySvg">
+        <line id="l1" x1="0" y1="0" x2="200" y2="100" stroke="black" stroke-width="1"/>
+        <circle id="c1" cx="100" cy="50" r="40" fill="#f008" stroke="black" stroke-width="1"/>
+        <rect id="r1" x="100" y="10" width="80" height="80" fill="#00f8" stroke="black" stroke-width="1"/>
+    </svg>
+</body>
+</html>
