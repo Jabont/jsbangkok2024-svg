@@ -17,17 +17,62 @@
             margin:10px;
             display: inline-block;
         }
+        #p1{
+            transition: all .5s;
+        }
         
     </style>
 
-    <svg viewBox="0 0 100 100" id="mySvg1">
-        <path id="p1" d="M 50,50 l20,20" fill="#00f8" stroke="black" stroke-width="1"/>
-    </svg>
     <svg viewBox="0 0 100 100" id="mySvg2">
-        <path id="p1" d="M 50,50 h20" fill="#00f8" stroke="black" stroke-width="1"/>
+        <path id="p1" d="
+        M 20,10 
+        l10,20
+        l50,30
+        l-40,20
+        z
+        " fill="#00f8" stroke="black" stroke-width="1"/>
     </svg>
-    <svg viewBox="0 0 100 100" id="mySvg3">
-        <path id="p1" d="M 50,50 v20" fill="#00f8" stroke="black" stroke-width="1"/>
-    </svg>
+    <button onclick="play1()">1</button>
+    <button onclick="play2()">2</button>
+    <script>
+    function play1(){
+        let p1 = document.querySelector('#p1');
+        p1.setAttribute('d', `
+        M 20,10 
+        l50,30
+        l10,20
+        l-40,20
+        z
+        `);
+    }
+    function play2(){
+        let p1 = document.querySelector('#p1');
+        p1.setAttribute('d', `
+        M 20,10 
+            l50,30
+            l10,20
+            l-50,40
+            z
+        `);
+    }
+    </script>
+    <svg viewBox="0 0 100 100" id="mySvg2">
+    <path id="p1" d="
+        M 20,10 
+        l50,30
+        l10,20
+        l-40,20
+        z
+        " fill="#0f08" stroke="black" stroke-width="1"/>
+    </svg>  
+    <svg viewBox="0 0 100 100" id="mySvg2">
+        <path id="p1" d="
+            M 20,10 
+            l50,30
+            l10,20
+            l-50,40
+            z
+            " fill="#0f08" stroke="black" stroke-width="1"/>
+        </svg>  
 </body>
 </html>

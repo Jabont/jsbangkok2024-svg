@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            margin:0;
+        }
+        svg{
+            width: 100%;
+            box-shadow:0px 0px 20px 0px #0004;
+            max-width: 300px;
+            margin:10px;
+            display: inline-block;
+        }
+        circle{
+            transition: all .5s;
+        }
+        
+    </style>
+
+    <svg viewBox="0 0 100 100" id="mySvg2">
+        <circle id="c1" cx="50" cy="50" r="0" fill="#00f8"/>
+        <circle id="c2" cx="50" cy="50" r="0" fill="#00f8"/>
+        <circle id="c3" cx="50" cy="50" r="0" fill="#00f8"/>
+        <circle id="c4" cx="50" cy="50" r="0" fill="#00f8"/>
+        <circle id="c5" cx="50" cy="50" r="0" fill="#00f8"/>
+        <circle id="c6" cx="50" cy="50" r="0" fill="#00f8"/>
+    </svg>
+
+    <button onclick="play()">random!</button>
+
+    <script>
+    function play(){
+        for(let i=1;i<=6;i++){
+            console.log(i);
+            document.querySelector('#c'+i).setAttribute('r', getRand(5,50));
+            document.querySelector('#c'+i).setAttribute('cx', getRand(0,100));
+            document.querySelector('#c'+i).setAttribute('cy', getRand(0,100));
+            document.querySelector('#c'+i).setAttribute('fill', `hsl(${getRand(0,360)},${getRand(80,100)}%,${getRand(50,80)}%,${getRand(20,80)}%)`);
+        }
+    }
+    const getRand = (min, max) => {
+        return Math.random() * (max - min) + min
+    }
+    </script>
+</body>
+</html>
