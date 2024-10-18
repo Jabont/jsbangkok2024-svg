@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            margin:0;
+        }
+        svg{
+            width: 100%;
+            box-shadow:0px 0px 20px 0px #0004;
+            max-width: 300px;
+            margin:10px;
+            display: inline-block;
+        }
+
+        #p1{
+            transition: all .3s;
+        }
+        
+    </style>
+
+    <svg viewBox="0 0 100 100" id="start-starter">
+        <path id="p1" d="
+        M10,50 
+        c 0,-30 50,30 80,0
+        " fill="#00f0" stroke="black" stroke-width="1"/>
+
+    </svg>
+
+    <button onclick="changeCurve()">Draw!</button>
+
+    <script>
+
+        function changeCurve(){
+            let d = `M10,50
+            c ${getRand(-30,30)},${getRand(-100,100)} ${getRand(-30+80,30+80)},${getRand(-100,100)} 80,0
+            `
+            document.querySelector('#p1').setAttribute('d', d);
+        }
+    // setInterval(()=>{changeStar()}, 100);
+
+    const getRand = (min, max) => {
+        return Math.random() * (max - min) + min
+    }
+
+    </script>
+</body>
+</html>
